@@ -214,15 +214,19 @@ jobs:
     - <<: *build-gevent
       env: TRAVIS_PYTHON_VERSION=2.7
       os: osx
+      arch: arm64
     - <<: *build-gevent
       env: TRAVIS_PYTHON_VERSION=3.6
       os: osx
+      arch: arm64
     - <<: *build-gevent
       env: TRAVIS_PYTHON_VERSION=3.7
       os: osx
+      arch: arm64
     - <<: *build-gevent
       env: TRAVIS_PYTHON_VERSION=3.8
       os: osx
+      arch: arm64
 
     - <<: *build-gevent
       env: TRAVIS_PYTHON_VERSION=2.7 GEVENTSETUP_EMBED=0 GEVENTSETUP_EV_VERIFY=1
@@ -270,7 +274,7 @@ jobs:
       name: 64-bit manylinux wheels (all Pythons)
       language: python
       services: docker
-      env: DOCKER_IMAGE=quay.io/pypa/manylinux2010_x86_64
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
       install: docker pull $DOCKER_IMAGE
       script: bash scripts/releases/make-manylinux
       before_script:
