@@ -440,8 +440,8 @@ cdef public class loop [object PyGeventLoopObject, type PyGeventLoop_Type]:
                     libev.ev_unref(self._ptr)
             else:
                 self._ptr = libev.ev_loop_new(c_flags)
-                if not self._ptr:
-                    raise SystemError("ev_loop_new(%s) failed" % (c_flags, ))
+  #              if not self._ptr:
+   #                 raise SystemError("ev_loop_new(%s) failed" % (c_flags, ))
             if default or SYSERR_CALLBACK is None:
                 set_syserr_cb(self._handle_syserr)
 
