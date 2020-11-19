@@ -642,6 +642,8 @@ class TestGeventOrg(TestCase):
     if RESOLVER_NOT_SYSTEM:
         def _normalize_result_gethostbyname(self, result):
             if result == '104.17.32.82':
+                result = '104.17.32.82'
+            if result == '104.17.33.82':
                 result = '104.17.33.82'
             return result
 
