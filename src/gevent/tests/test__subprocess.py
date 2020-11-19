@@ -431,7 +431,7 @@ class RunFuncTestCase(greentest.TestCase):
         # killed, this call will deadlock since subprocess.run waits for the
         # child.
         with self.assertRaises(subprocess.TimeoutExpired):
-            self.run_python("while True: pass", timeout=0.0001)
+            self.run_python("while True: pass", timeout=0.01)
 
     @greentest.skipOnLibuvOnPyPyOnWin("hangs")
     def test_capture_stdout(self):
