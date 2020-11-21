@@ -209,6 +209,7 @@ class TestPopen(greentest.TestCase):
 
     @greentest.skipOnWindows("Uses 'grep' command")
     def test_nonblock_removed(self):
+        print('######################### test_nonblock_removed ########################')
         # see issue #134
         r, w = os.pipe()
         stdin = subprocess.FileObject(r)
@@ -269,6 +270,7 @@ class TestPopen(greentest.TestCase):
         Thread = monkey.get_original('threading', 'Thread')
 
         def fn():
+            print('############################ fn @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
             with self.assertRaises(TypeError) as exc:
                 gevent.subprocess.Popen('echo 123', shell=True)
             ex.append(exc.exception)
