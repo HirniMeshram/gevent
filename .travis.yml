@@ -10,7 +10,7 @@ dist: bionic
 arch: arm64-graviton2
 dist: focal
 virt: vm
-group: edge
+#group: edge
 group: travis_latest
 os:
   - linux
