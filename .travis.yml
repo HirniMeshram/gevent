@@ -6,7 +6,7 @@
 # python: one day so making the migration simpler). "shell" and
 # "minimal" are aliases.
 language: shell
-dist: bionic
+#dist: bionic
 arch: arm64-graviton2
 dist: focal
 virt: vm
