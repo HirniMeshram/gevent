@@ -11,7 +11,7 @@ arch: arm64-graviton2
 dist: focal
 virt: vm
 group: edge
-#group: travis_latest
+group: travis_latest
 os:
   - linux
   - osx
