@@ -6,12 +6,12 @@
 # python: one day so making the migration simpler). "shell" and
 # "minimal" are aliases.
 language: shell
-#dist: bionic
-arch: arm64
-dist: focal
-virt: vm
-group: edge
-#group: travis_latest
+dist: bionic
+arch: arm64-graviton2
+#dist: focal
+#virt: vm
+#group: edge
+group: travis_latest
 os:
   - linux
   - osx
