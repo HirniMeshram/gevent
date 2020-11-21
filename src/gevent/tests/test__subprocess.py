@@ -40,6 +40,7 @@ class TestPopen(greentest.TestCase):
     error_fatal = False
 
     def test_exit(self):
+        print('########################## test_exit ###############')
         popen = subprocess.Popen([sys.executable, '-c', 'import sys; sys.exit(10)'])
         self.assertEqual(popen.wait(), 10)
 
@@ -57,6 +58,7 @@ class TestPopen(greentest.TestCase):
         self.assertEqual(exc.exception.errno, 2)
 
     def test_leak(self):
+        print('##################### test_leak #######################')
         num_before = greentest.get_number_open_files()
         p = subprocess.Popen([sys.executable, "-c", "print()"],
                              stdout=subprocess.PIPE)
