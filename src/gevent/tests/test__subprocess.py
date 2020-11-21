@@ -431,7 +431,7 @@ class RunFuncTestCase(greentest.TestCase):
         # killed, this call will deadlock since subprocess.run waits for the
         # child.
         with self.assertRaises(subprocess.TimeoutExpired):
-            self.run_python("while True: pass", timeout=0.0001)
+            self.run_python("while True: pass", timeout=1)
 
     @greentest.skipOnLibuvOnPyPyOnWin("hangs")
     def test_capture_stdout(self):
@@ -485,7 +485,7 @@ class RunFuncTestCase(greentest.TestCase):
                     "import sys, time\n"
                     "sys.stdout.write('BDFL')\n"
                     "sys.stdout.flush()\n"
-                    "time.sleep(36000)"
+                    "time.sleep(3600)"
                 ),
                 # Some heavily loaded buildbots (sparc Debian 3.x) require
                 # this much time to start and print.
