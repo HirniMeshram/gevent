@@ -44,11 +44,13 @@ class TestPopen(greentest.TestCase):
         self.assertEqual(popen.wait(), 10)
 
     def test_wait(self):
+        print ('############ test_wait #####################')
         popen = subprocess.Popen([sys.executable, '-c', 'import sys; sys.exit(11)'])
         gevent.wait([popen])
         self.assertEqual(popen.poll(), 11)
 
     def test_child_exception(self):
+        print ('############ test_child_exception #####################')
         with self.assertRaises(OSError) as exc:
             subprocess.Popen(['*']).wait()
 
@@ -257,6 +259,7 @@ class TestPopen(greentest.TestCase):
     @greentest.ignores_leakcheck
     @greentest.skipOnWindows("Not sure why?")
     def test_subprocess_in_native_thread(self):
+        print ('################# test_subprocess_in_native_thread ################')
         # gevent.subprocess doesn't work from a background
         # native thread. See #688
         from gevent import monkey
@@ -426,6 +429,7 @@ class RunFuncTestCase(greentest.TestCase):
         self.assertEqual(cp.returncode, 0)
 
     def test_timeout(self):
+        print ('################### test_timeout ###############')
         # run() function with timeout argument; we want to test that the child
         # process gets killed when the timeout expires.  If the child isn't
         # killed, this call will deadlock since subprocess.run waits for the
@@ -508,6 +512,7 @@ class RunFuncTestCase(greentest.TestCase):
     # happened.
     @greentest.skipOnWindows("requires posix like 'sleep' shell command")
     def test_run_with_shell_timeout_and_capture_output(self):
+        print('################## test_run_with_shell_timeout_and_capture_output #################')
         #Output capturing after a timeout mustn't hang forever on open filehandles
         with self.runs_in_given_time(0.1):
             with self.assertRaises(subprocess.TimeoutExpired):
