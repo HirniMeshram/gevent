@@ -40,7 +40,7 @@ class TestPopen(greentest.TestCase):
     error_fatal = False
 
     def test_exit(self):
-        print('########################## test_exit ###############')
+        print('########################## test_exit #################')
         popen = subprocess.Popen([sys.executable, '-c', 'import sys; sys.exit(10)'])
         self.assertEqual(popen.wait(), 10)
 
@@ -51,7 +51,7 @@ class TestPopen(greentest.TestCase):
         self.assertEqual(popen.poll(), 11)
 
     def test_child_exception(self):
-        print ('############ test_child_exception #####################')
+        print ('############## test_child_exception #####################')
         with self.assertRaises(OSError) as exc:
             subprocess.Popen(['*']).wait()
 
