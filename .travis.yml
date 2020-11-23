@@ -275,7 +275,6 @@ jobs:
     # These take awhile, so get them started while others proceed in parallel.
     - stage: test
       name: 64-bit manylinux wheels (all Pythons)
-      dist: focal
       language: python
       services: docker
       env:
