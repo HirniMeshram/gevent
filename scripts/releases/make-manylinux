@@ -49,9 +49,9 @@ if [ -d /gevent -a -d /opt/python ]; then
     export XDG_CACHE_HOME="/cache"
     ls -ld /cache
     ls -ld /cache/pip
-    yum -y install libffi-devel
-    yum -y install epel-release
-    yum -y install ccache
+    yum -y install libffi-devel ccache
+    #yum -y install epel-release
+    #yum -y install ccache
     # On Fedora Rawhide (F33)
     # yum install python39 python3-devel gcc kernel-devel kernel-headers make diffutils file
 
