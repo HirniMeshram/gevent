@@ -455,7 +455,6 @@ class TestCase(greentest.TestCase):
         # From 2.7 on, assertEqual does a better job highlighting the results than we would
         # because it calls assertSequenceEqual, which highlights the exact
         # difference in the tuple
-        real_result = gevent_result
         self.assertEqual(real_result, gevent_result)
 
 
